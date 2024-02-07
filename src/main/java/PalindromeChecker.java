@@ -25,7 +25,7 @@ public void tester()
   System.out.println("there are " + lines.length + " lines");
   for (int i=0; i < lines.length; i++) 
   {
-    if(palindrome(noCapitals(noSpaces(onlyLetters(lines[i]))))==true)
+    if(palindrome(lines[i])==true)
     {
       System.out.println(lines[i] + " IS a palindrome.");
     }
@@ -37,6 +37,7 @@ public void tester()
 }
 public boolean palindrome(String word)
 {
+  word = noCapitals(noSpaces(onlyLetters(word)));
   if(word.equals(reverse(word)))
     return true;
   return false;
